@@ -9,5 +9,5 @@ Projects from the graduate courses that I completed while enrolled in BYU Master
 4. [Agricutlure](https://github.com/mjoehler94/Graduate_Projects/blob/master/4%20Agriculture/Ag%20Report/Agriculture_Project_slides.pdf)
 5. [Solar Power](https://github.com/mjoehler94/Graduate_Projects/blob/master/5%20Solar%20Power/Solar_Markdown.pdf)
 6. [Car Crashes](https://github.com/mjoehler94/Graduate_Projects/blob/master/6%20Crashes/car-crash-final.pdf)
-7. [Letter Classification] (https://github.com/mjoehler94/Graduate_Projects/blob/master/7%20Letters/letter-classification-analysis.pdf)
+7. [Letter Classification](https://github.com/mjoehler94/Graduate_Projects/blob/master/7%20Letters/letter-classification-analysis.pdf)
 8. [Ozone](https://github.com/mjoehler94/Graduate_Projects/blob/master/8%20Ozone/finalReport.pdf)
