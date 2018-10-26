@@ -1,0 +1,48 @@
+---
+title: "Credit EDA (Python)"
+author: "Matt Oehler"
+date: "January 12, 2018"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+
+library(reticulate)
+
+knitr::knit_engines$set(python = reticulate::eng_python)
+
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Python
+
+```{python}
+import pandas as pd
+#for plotting
+from matplotlib import pyplot as plt
+#%matplotlib inline
+import seaborn as sns
+
+```
+
+```{python}
+import pandas as pd
+data = pd.read_csv('creditdata.csv')
+print(data.head())
+```
+
+```{python}
+import pandas as pd
+data = pd.read_csv('creditdata.csv')
+from matplotlib import pyplot as plt
+import seaborn as sns
+data.boxplot('Balance',by='Gender')
+#plt.show()
+
+```
+
+
+

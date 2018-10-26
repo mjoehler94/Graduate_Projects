@@ -1,0 +1,52 @@
+---
+title: "Car Crash EDA"
+author: "Matt Oehler"
+date: "March 12, 2018"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F)
+```
+
+## 1 Description
+Traffic accidents are the cause of several thousand deaths each year. The FHWA is responsible for increasing the safety of highways and road ways. The GES collects data about car crashes. Using the data collected by the GES we hope to be able to see which independent features relate with car crashes. This will hopefully lead to better policies that can help to improve road conditions and save lives. 
+
+## 2 Data
+The data consists of over 8000 observed accidents, and has characteristics about each accident such as speed limit, type of intersection, involvement of alcohol, and etc. The severity of the accident is recorded as a binary variable, and the table below shows that the data set is very balanced between severe and non severe accidents.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{rr}
+  \hline
+ & Severity \\ 
+  \hline
+0 & 4549 \\ 
+  1 & 4054 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+Since the response variable is categorical we can't use standard scatter plots to view the data. But by using scatterplots with a smooth local regression line, we can see over all trend of certain features in how they relate to the response. Box plots can also be useful when assessing how quantitative variables relate to categorical variables. The plots below show how alcohol, speed limit, and road alignment relate to crash severity.
+
+```{r,warning=FALSE,fig.height=3}
+setwd("~/Matt BYU/10 Winter 2018/Stat 536/EDA 6 Crashes")
+crash.raw <- read.table('Crash.txt',header=T)
+crash <- crash.raw[,c(2:8,10:14,9)]
+
+scatter.smooth(crash$ALCOHOL,crash$SEVERITY,main='Alcohol')
+scatter.smooth(crash$VSPD_LIM,crash$SEVERITY,main='Speed Limit')
+scatter.smooth(crash$VALIGN,crash$SEVERITY,main='Alignment')
+boxplot(crash$SEVERITY,crash$VSPD_LIM,main='Speed Limit')
+
+
+```
+
+
+## 3 Method
+Logistic regression would be an appropriate method for this analysis because it can be used to classify data. Using this method we can probabilities that a certian accident is severe or not severe.
+
+
+## 4 Something I don't know
+I suggested logistic regression as the appropriate methodology, but that is only because I am familiar with it. I have never used other methods.  I am curious to know what the strengths and weaknesses are of each method. Then I would be able to pick a method that I feel best applies to this problem. 
+

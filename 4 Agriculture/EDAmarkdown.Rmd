@@ -1,0 +1,41 @@
+---
+title: "EDA Agriculture"
+author: "Matt Oehler"
+date: "February 12, 2018"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### 1. Problem Summary
+
+Irrigation helps farmers to avoid the effects of drought. In cases of water scarcity, actions neeeded to be taken to help optimize crop output per drop of water. Using measurements of crop water stress index (CWSI), farmers can know when they need to water their crops. However, in order to know how much water their crops need farmers use measurements of soil water content (SWC) which are expensive relative to CSWI. We hope to be able to determine if their is a relationship between SWC and CSWI. If we can understand this relationship then farmers can hopefully predict the amount of water that their crops need without paying for the expensive SWC measurements.
+
+### 2. Data Summary
+We have 78 measurements in our data set for SWC and CWSI. The summary statistics and a plot of CWSI vs SWC are shown below. We can see that their seems to be a relationship, but it doesn't seem to be linear. 
+
+```{r,echo=F,comment=''}
+#read in the data
+agdat <- read.table('AgricultureWater.txt',header = T)
+
+summary(agdat)
+# head(agdat)
+plot(agdat$cwsi,agdat$swc,main='Crop Data',
+     xlab='CWSI',ylab='SWC')
+```
+
+
+### 3. Statistical Method
+I think that some kind of polynomial regression method would be best for this problem because the data aren't linearly related. Creating a non-linear model that fits this data would help us to understand the relationship between CWSI and SWC, and also help us to make predictions of SWC given CWSI, which is what we are most interested in.
+
+### 4. Things I don't know
+
+I don't know exactly how to make a non-linear model (beyond what was briefly mentioned in class). I'm also unsure how consistent a polynomial model would be in terms of prediction accuracy as compared to a linear model, or if prediction accuracy is even affected by the type of model as long as it fits the data well.
+
+
+
+
+
+
